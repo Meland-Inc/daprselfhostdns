@@ -7,7 +7,8 @@ spec:
     version: v1
     component: "consul"
     configuration:
-      selfRegister: true
+      client:
+        address: $consulAddress
   tracing:
     samplingRate: "1"
     zipkin:

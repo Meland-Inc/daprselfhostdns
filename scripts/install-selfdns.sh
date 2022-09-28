@@ -18,7 +18,7 @@ consulAddress=""
 echo "请输入dns地址";
 read -r consulAddress
 
-consulAddress="$consulAddress:8500"
+consulAddress="$consulAddress"
 
 cat "$PROJECT_ROOT/config/consul.yaml" | sed "s/\$consulAddress/$consulAddress/g" > ~/.dapr/components/consul.yaml;
 
