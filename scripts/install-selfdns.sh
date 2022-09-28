@@ -22,4 +22,4 @@ consulAddress="$consulAddress"
 
 cat "$PROJECT_ROOT/config/consul.yaml" | sed "s/\$consulAddress/$consulAddress/g" > ~/.dapr/components/consul.yaml;
 
-cp "$PROJECT_ROOT/config/config.yaml" ~/.dapr/config.yaml;
+cat "$PROJECT_ROOT/config/config.yaml" | sed "s/\$consulAddress/$consulAddress/g" > ~/.dapr/config.yaml;
