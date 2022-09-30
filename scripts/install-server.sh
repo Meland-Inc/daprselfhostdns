@@ -14,4 +14,4 @@ readonly PROJECT_ROOT="$(dirname $DIR)"
 RUN_ROOT="$PROJECT_ROOT"
 cd $PROJECT_ROOT;
 
-docker run -d -p 8500:8500 --name=dev-consul -e CONSUL_BIND_INTERFACE=eth0 consul
+docker run -d -p 8500:8500 --name=dev-consul-1 -e CONSUL_BIND_INTERFACE=eth0 --restart always consul 

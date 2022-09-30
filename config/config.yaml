@@ -3,6 +3,9 @@ kind: Configuration
 metadata:
   name: daprConfig
 spec:
+  accessControl:
+    defaultAction: ""
+    trustDomain: ""
   nameResolution:
     version: v1
     component: "consul"
