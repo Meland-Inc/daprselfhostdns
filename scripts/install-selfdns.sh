@@ -14,12 +14,13 @@ readonly PROJECT_ROOT="$(dirname $DIR)"
 RUN_ROOT="$PROJECT_ROOT"
 cd $PROJECT_ROOT;
 
-consulAddress=""
-echo "请输入dns地址";
-read -r consulAddress
+consulAddress="192.168.50.171:8500"
+# echo "请输入dns地址";
+# read -r consulAddress
+# consulAddress="$consulAddress"
 
-consulAddress="$consulAddress"
-
+echo "当前使用dns url: ${consulAddress}";
+ 
 cat "$PROJECT_ROOT/config/consul.yaml" | sed "s/\$consulAddress/$consulAddress/g" > ~/.dapr/components/consul.yaml;
 
 cat "$PROJECT_ROOT/config/config.yaml" | sed "s/\$consulAddress/$consulAddress/g" > ~/.dapr/config.yaml;
